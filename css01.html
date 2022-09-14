@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스타일 지정 방식</title>
+    <!-- 외부 스타일 : link 요소로 스타일의 문서를 외부 css 파일로 만들어 지정하는 방식 -->
+    <link rel="stylesheet" href="common.css">
+    <style>
+    /* 내부 스타일(inner style) : 해당 문서의 스타일만을 현재 문서에 지정하는 방식 */
+    .wrap { clear:both; }
+    #hd1 { background-color:deepskyblue; }
+    .hd { height: 100px; background-color:deeppink; }
+    header { background-color:gold;}
+    #hd1 { background-color:orange; }
+    /* 선택자 우선 순위 
+    인라인스타일 > id(#) > class(.) > tag 으로 아이디가 우선 순위가 빠르며, 같은 선택자가 지정된 것 끼리는 맨 나중에 입력된 속성의 값이 적용됨
+    */
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <header class="hd" id="hd1">
+        <h1>헤더</h1>
+    </header>
+    <div class="content">
+        <section class="page">
+            <!-- 인라인 스타일 지정 방식 : 해당 요소에 직접 style 속성으로 스타일을 지정 -->
+            <h2 style="color:red">콘텐츠 영역</h2>
+        </section>
+    </div>
+    <footer class="ft">
+        <h1>푸터</h1>
+    </footer>
+</div>
+</body>
+</html>

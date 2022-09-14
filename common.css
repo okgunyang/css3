@@ -1,0 +1,6 @@
+@charset "UTF-8";
+/*
+선택자 { 속성:값; }
+*/
+* { margin: 0; padding: 0; }
+#hd1 { background-color:purple; }
