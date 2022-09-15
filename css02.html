@@ -4,10 +4,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="common.css">
+    <title>css2 - 속성 선택자</title>
+    <style>
+    /*
+    
+    * : 전체 선택자
+    element : 태그 선택자 (ex: h1 { color:red; } )
+    .class : 클래스 선택자
+    #id : 아이디 선택자    
+    [attr] : 속성 선택자
+        attribute : 속성
+        properties : 특성(속성)
+    */
+    img { display:block; float:left; width: 200px; height:300px; margin: 20px; border-width:5px; }  
+    /* data-val 속성이 존재할 경우 선택 = 속성존재선택자 */  
+    [data-val] { border-style:dashed; } 
+    /* data-val 속성이 a인 요소를 선택  = 속성일치선택자 */
+    [data-val="a"] { width: 300px; } 
+    /* src 속성이 .svg로 끝나는 요소 선택 = 속성접미사선택자 */
+    [src$=".svg"] { border-color:gold; }
+    /* src 속성이 s로 시작하는 요소 선택 = 속성접두사선택자 */
+    [src^="s"] { border-color:deeppink; } /* img[src|="s"]와 유사한 선택자 */
+    /* src 속성이 t가 포함하는 요소 선택 = 속성유사선택자 */
+    img[src*="t"] { border-color:deepskyblue; }
+    </style>
 </head>
 <body>
-    
+    <img src="abc.svg" alt="svg 임시 이미지" data-val="a">
+    <img src="kbs.jpg" alt="jpg 임시 이미지">
+    <img src="mbc.png" alt="png 임시 이미지" data-val="b">
+    <img src="sbs.gif" alt="gif 임시 이미지">
+    <img src="jtbc.webp" alt="webp 임시 이미지" data-val="c">
+    <img src="ytn.jiff" alt="jiff 임시 이미지">
 </body>
 </html>
