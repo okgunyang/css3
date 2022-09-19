@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css5 - 스타일 속성1</title>
+    <style>
+    .box { width: 100px; height: 100px; line-height: 100px; 
+    text-align: center; float:left; margin:15px; }
+
+    #box1 { background-color:gold; }
+    #box2 { background-color:#ff6600; }
+    #box3 { background-color:#c30; }
+    #box4 { background-color:rgb(255,10,5); }
+    #box5 { background-color: rgba(255,10,5,0.3); }
+    #box6 { background-color: rgb(255,10,5); opacity:0.3; }
+    #box7 { background-color:hsl(60,89%,40%); }
+    #box8 { background-color:hsla(60,89%,40%,0.3); }
+    #box9 { background-color:transparent;  }
+    #box10 { background-color: inherit; }
+
+    .bgi { width: 100%; min-height:100vh; margin: 0; clear:both; 
+    border:3px solid #333; background-image: url("ive01.png"), url("jungle.jpg"); }
+
+    #bgi1 { background-size:300px 200px, cover; background-repeat:no-repeat; background-position:center bottom;}
+    #bgi2 { background-size:400px 300px, contain; background-repeat: repeat-x, no-repeat; background-position:center center;}
+    #bgi3 { background-size:300px 200px, 1200px 900px; background-repeat:repeat; background-position:100% 100%; }
+    #bgi4 { background-size:400px 300px, auto; background-repeat: repeat-y; background-position:center center; }
+    #bgi5 { background-size:cover; background-repeat: no-repeat; 
+    background-position: center center; filter:sepia(0.7); background-attachment: fixed; }
+    #bgi6 { background-size:100%; background-repeat: no-repeat; background-position: center center; border:30px solid rgba(255,10,5,0.4); background-clip: content-box; }
+    #bgi7 { background-size:100%; background-repeat: no-repeat; background-position: center center; border:30px solid rgba(255,10,5,0.4); background-clip: content-box; background-origin: padding-box; }
+    #bgi8 { background-repeat: no-repeat; background-size:cover; background-blend-mode:hard-light; }
+    /* background-image:url("파일경로및이름")  - 배경이미지 지정 */
+    /* background-image:none; - 배경이미지 없음 */
+    /* background-size: px|%|cover(너비에맞게)|contain(높이에맞게) 단위로 -> 가로크기  세로크기  - 배경이미지 크기 */
+    /* background-position : px|%|키워드  단위로 -> 가로위치  세로위치
+    가로위치 키워드 left | center | right, 가로위치 키워드 : top center bottom - 배경이미지 위치(정렬) */
+    /* background-repeat : repeat | no-repeat | repeat-x | repeat-y 배경반복 */
+    /* background-attachment : scroll | fixed  배경 화면에 고정 또는 스크롤 */
+    /* background-clip : border-box | padding-box | content-box 
+        배경이미지를 어디까지 채울지    */
+    /* background-origin : border-box | padding-box | content-box 
+        배경이미지를 시작위치    */    
+    /* background-blend-mode : 이미지 합성 */
+        
+    </style>   
+</head>
+<body>
+    <div class="page" id="page1">
+        <div class="box" id="box1">박스1</div>
+        <div class="box" id="box2">박스2</div>
+        <div class="box" id="box3">박스3</div>
+        <div class="box" id="box4">박스4</div>
+        <div class="box" id="box5">박스5</div>
+        <div class="box" id="box6">박스6</div>
+        <div class="box" id="box7">박스7</div>
+        <div class="box" id="box8">박스8</div>
+        <div class="box" id="box9">박스9</div>
+        <div class="box" id="box10">박스10</div>
+    </div>
+    <div class="page" id="page2">
+        <div class="bgi" id="bgi1">배경이미지1</div>
+        <div class="bgi" id="bgi2">배경이미지2</div>
+        <div class="bgi" id="bgi3">배경이미지3</div>
+        <div class="bgi" id="bgi4">배경이미지4</div>
+        <div class="bgi" id="bgi5">배경이미지5</div>
+        <div class="bgi" id="bgi6">배경이미지6</div>
+        <div class="bgi" id="bgi7">배경이미지7</div>
+        <div class="bgi" id="bgi8">배경이미지8</div>
+        <div class="bgi" id="bgi9">배경이미지9</div>
+        <div class="bgi" id="bgi10">배경이미지10</div>
+    </div>
+</body>
+</html>   
