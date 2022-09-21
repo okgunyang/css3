@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css 7 - display, box</title>
+    <style>
+    /* block 방식 : 한 줄에 하나의 요소만 표시되고, 크기(width, height, line-height, text-align, margin-top, margin-bottom, padding-top, padding-bottom) 지정이 가능함 */
+    /* inline 방식 : 한 줄에 여러 개 요소가 표시되고, 크기를 지정할 수 없다. 다만, img, video 요소는 인라인 요소이지만, 크기지정이 가능함.
+    span, a, strong, em, ins, input */
+    /* inline-block 방식 : 한 줄에 여러 개 요소가 표시되고, 크기 지정도 가능함 */
+    /* display : block | inline | inline-block | none - 표시속성 */
+        /* 테이블 관련 : table, table-row, table-cell */
+        /* 반응형 관련 : flex, grid */
+    /* visibility : visible | hidden - 가시속성 */
+    /* opacity : 0~1 까지의 실수 - 불투명도 */
+    /* width : px | % | em | vh | vw 단위 숫자 -> 너비(폭)지정 */
+    /* height : px | % | em | vh | vw 단위 숫자 -> 높이 지정 */
+        /* width 또는 height 은 auto 지정이 가능함 */
+    /* overflow : visible | auto | scroll | hidden -> 흘러 넘침 속성 */
+    /* margin : 상/우/하/좌, 상/하 좌/우, 상 우 하 좌 -> 바깥여백 */
+        /* margin-top, margin-right, margin-bottom, margin-left */
+    /* padding : 상/우/하/좌, 상/하 좌/우, 상 우 하 좌 -> 안여백 */
+        /* padding-top, padding-right, padding-bottom, padding-left */ 
+    .box { display:inline-block; background-color:gold; }  
+    #box1 { display:block; margin-top:30px; margin-bottom:30px; width:200px; text-align: center; line-height: 200px; } 
+    #box2 { display:inline; margin:50px; line-height: 200px; }
+    #box3 { width: 400px; height:100px; opacity:0.7; overflow:scroll; }
+    #box5 { display:none; }
+    #box6 { width: 150px; height: 150px; margin:100px;  overflow:auto; margin-top:40px; }
+    #box7 { visibility: hidden; }
+    #box8 { width: 150px; height: 150px; overflow-x:hidden; 
+    overflow-y: auto; }
+    #box9 { width: 150px; height: 150px; margin:20px 40px; 
+    border:5px solid red; }
+    #box10 { width: 150px; height: 150px; margin:20px 40px 60px 80px;  padding:40px; border:5px solid red; box-sizing:border-box; overflow:hidden; }
+    .data { display:block; }    
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="box" id="box1">박스1</div>
+        <div class="box" id="box2">박스2</div>
+        <div class="box" id="box3">박스3</div>
+        <div class="box" id="box4">박스4</div>
+        <div class="box" id="box5">박스5</div>
+        <div class="box" id="box6">박스6 박스6 박스6 박스6박스6 박스6 박스6박스6박스6박스6박스6 박스6 박스6 박스6 박스6 박스6 박스6 박스6 박스6 박스6 박스6 박스6 박스6박스6 박스6 박스6 박스6 박스6박스6 박스6 박스6박스6박스6박스6박스6 박스6 박스6 박스6 박스6 박스6 박스6 박스6 박스6 박스6 박스6 박스6 박스6박스6 </div>
+        <div class="box" id="box7">박스7 박스7 박스7 박스7 박스7 박스7 박스7 박스7 박스7 박스7 박스7 박스7 박스7 박스7 박스7 박스7 박스7 박스7 박스7 박스7 박스7 박스7 박스7 박스7 박스7 박스7 박스7 박스7 박스7 박스7 박스7 박스7 박스7 박스7 박스7 박스7 박스7 박스7 박스7 박스7 박스7 박스7 박스7 박스7 박스7 박스7 박스7 박스7 박스7 박스7 박스7 박스7 </div>
+        <div class="box" id="box8">박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 박스8 </div>
+        <div class="box" id="box9">박스9 박스9 박스9 박스9 박스9 박스9 박스9 박스9 박스9 박스9 박스9 박스9 박스9 박스9 박스9 박스9 박스9 박스9 박스9 박스9 박스9</div>
+        <div class="box" id="box10">박스10 박스10 박스10 박스10 박스10 박스10 박스10 박스10 박스10 박스10 박스10 박스10 박스10 박스10 박스10 박스10 박스10 박스10</div>
+    </div>
+    <hr>
+    <div class="wrap"><span class="data" id="data1">데이터1</span><span class="data" id="data2">데이터2</span><span class="data" id="data3">데이터3</span><span class="data" id="data4">데이터4</span><span class="data" id="data5">데이터5</span><span class="data" id="data6">데이터6</span><span class="data" id="data7">데이터7</span><span class="data" id="data8">데이터8</span><span class="data" id="data9">데이터9</span><span class="data" id="data10">데이터10</span></div>
+</body>
+</html>
