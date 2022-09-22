@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css 8 - 위치관련 속성</title>
+    <style>
+    /* 초기화 */
+    * { margin: 0; padding: 0; }
+    body, html { width: 100%; }
+    a { text-decoration: none; }  
+    ul { list-style: none; }
+    /* float : none | left | right -> 부동적 흐름 속성 */
+    /* clear : none | left | right | both -> 부동적 흐름 해제 속성 */
+
+    /* position : static | relative | absolute | fixed | sticky 
+                  정적      상대적      절대적     화면에고정
+    -> 위치 속성으로 
+        float, clear, margin 로 배치 -> static, relative;
+        z-index, top | bottom, left | right 로 배치 -> absolute, fixed
+    */
+    .wrap { width: 100%; }
+    .hd { width: 100%; border-bottom:2px solid #333; }
+    .logo { display:block; width: 100px; height:100px; border:3px solid gold; 
+    border-radius:52px; line-height:100px; text-align:center; margin-left: 20px; margin-top: 20px; float:left; }
+    .top { float:right; margin-top: 20px; margin-right: 20px; }
+    .gnb { clear:both; width:1000px; height:40px; background-color:gold; 
+    margin:20px auto; }
+
+    .content { width: 100%; height:800px; }
+    .vs { width: 100%; position:relative; }
+    .vs img { display:block; width: 100%; height:auto; }
+    .vs_tit { position:absolute; top:100px; padding-left:150px; }
+    .quick { width:100px; height:400px; background-color:deeppink; position:fixed; z-index:999; top:100px; right:40px;  }
+    
+    .art { clear:both; width: 1200px; margin:0 auto; }
+    .lst { position:relative; }
+    .lst li { float:left; margin:25px; position:relative; }
+
+    .ft { clear: both; height:100px; background-color: #333; color:#fff; 
+    padding-left: 100px; }
+    .ev { display:block; width: 40px; height: 40px; border-radius:20px; 
+    background-color: deeppink; color:#fff; text-align:center; line-height: 40px; 
+position:absolute; right:25px; top:25px; }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <header class="hd">
+            <a href="" class="logo">로고</a>
+            <nav class="top">상단</nav>
+            <nav class="gnb">메인메뉴</nav>
+        </header>
+        <div class="content">
+            <figure class="vs">
+                <img src="https://placeimg.com/900/200/animals/sepia" alt="동물">
+                <h3 class="vs_tit">내가 좋아하는 동물</h3>
+            </figure>
+            <section class="sec">
+                <h2 class="page_tit">페이지 제목</h2>
+                <article class="art">
+                    <ul class="lst">
+                        <li>
+                            <a href="">
+                                <img src="https://placeimg.com/300/200/animals/sepia" alt="">
+                                <h3 class="lst_tit">제목1</h3>
+                                <p class="lst_com">설명1</p>
+                                <span class="ev">신상품</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="https://placeimg.com/300/200/animals/sepia" alt="">
+                                <h3 class="lst_tit">제목2</h3>
+                                <p class="lst_com">설명2</p>
+                                <span class="ev">신상품</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="https://placeimg.com/300/200/animals/sepia" alt="">
+                                <h3 class="lst_tit">제목3</h3>
+                                <p class="lst_com">설명3</p>
+                                <span class="ev">신상품</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="https://placeimg.com/300/200/animals/sepia" alt="">
+                                <h3 class="lst_tit">제목4</h3>
+                                <p class="lst_com">설명4</p>
+                                <span class="ev">신상품</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="https://placeimg.com/300/200/animals/sepia" alt="">
+                                <h3 class="lst_tit">제목5</h3>
+                                <p class="lst_com">설명5</p>
+                                <span class="ev">신상품</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="https://placeimg.com/300/200/animals/sepia" alt="">
+                                <h3 class="lst_tit">제목6</h3>
+                                <p class="lst_com">설명6</p>
+                                <span class="ev">신상품</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="https://placeimg.com/300/200/animals/sepia" alt="">
+                                <h3 class="lst_tit">제목7</h3>
+                                <p class="lst_com">설명7</p>
+                                <span class="ev">신상품</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="https://placeimg.com/300/200/animals/sepia" alt="">
+                                <h3 class="lst_tit">제목8</h3>
+                                <p class="lst_com">설명8</p>
+                                <span class="ev">신상품</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="https://placeimg.com/300/200/animals/sepia" alt="">
+                                <h3 class="lst_tit">제목9</h3>
+                                <p class="lst_com">설명9</p>
+                                <span class="ev">신상품</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="https://placeimg.com/300/200/animals/sepia" alt="">
+                                <h3 class="lst_tit">제목10</h3>
+                                <p class="lst_com">설명10</p>
+                                <span class="ev">신상품</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="https://placeimg.com/300/200/animals/sepia" alt="">
+                                <h3 class="lst_tit">제목11</h3>
+                                <p class="lst_com">설명11</p>
+                                <span class="ev">신상품</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="https://placeimg.com/300/200/animals/sepia" alt="">
+                                <h3 class="lst_tit">제목12</h3>
+                                <p class="lst_com">설명12</p>
+                                <span class="ev">신상품</span>
+                            </a>
+                        </li>
+                    </ul>
+                </article>
+                
+            </section>
+        </div>
+        <footer class="ft">
+            <h2>푸터</h2>
+        </footer>
+    </div>
+    <div class="quick">퀵 메뉴</div>
+</body>
+</html>

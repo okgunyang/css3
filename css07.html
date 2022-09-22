@@ -24,20 +24,53 @@
         /* margin-top, margin-right, margin-bottom, margin-left */
     /* padding : 상/우/하/좌, 상/하 좌/우, 상 우 하 좌 -> 안여백 */
         /* padding-top, padding-right, padding-bottom, padding-left */ 
+    /* box-shadow : x량 y량 블러량 그림자색 -> 박스 그림자 */
+    /* box-sizing : content-box | padding-box | border-box -> 지정한 크기가 어디까지를 기준으로 적용할지 지정 */
     body, html { scroll-behavior:smooth; scroll-snap-type: y mandatory; }    
     .box { display:inline-block; background-color:gold; }  
     #box1 { display:block; margin-top:30px; margin-bottom:30px; width:200px; text-align: center; line-height: 200px;  } 
     #box2 { display:inline; margin:50px; line-height: 200px; }
     #box3 { width: 400px; height:100px; opacity:0.7; overflow:scroll; }
     #box5 { display:none; }
-    #box6 { width: 150px; height: 150px; margin:100px;  overflow:auto; margin-top:40px; }
+    #box6 { width: 150px; height: 150px; margin:100px;  overflow:auto; margin-top:40px; box-shadow:2px 2px 0px #666, 4px 4px 0px #555, 6px 6px 0px #444, 8px 8px 0px #333, 10px 10px 0px #222, 12px 12px 0px #111; }
     #box7 { visibility: hidden; }
     #box8 { width: 150px; height: 150px; overflow-x:hidden; 
     overflow-y: auto; }
     #box9 { width: 150px; height: 150px; margin:20px 40px; 
     border:5px solid red; }
     #box10 { width: 150px; height: 150px; margin:20px 40px 60px 80px;  padding:40px; border:5px solid red; box-sizing:border-box; overflow:hidden; }
-    .data { display:block; }    
+    .data { display:block; } 
+
+    /* border : border-width(선두께)  border-style(선종류)  border-color(선색상) -> 외곽선설정 => outline */
+    /* border-width : px단위 | pt단위 -> 선두께 */
+    /* 세부속성 */
+    /* border-style : solid | dotted | dashed | double | hidden | groove | inset | outset; -> 선종류 */
+    /* border-color : 컬러명 | #16진코드 6자리 | #16진코드 3자리 | rgb | rgba | hsl | hsla */
+    /* border-top | border-right | border-bottom | border-left -> border의 각 위치별로 선두께, 선종류, 선색상을 제각각 지정 */
+    /* 세세속성 : border-위치-변수 
+        위치 : top | right | bottom | left
+        변수 : width | style | color
+    */
+    /* border-radius : 모서리를 둥글게 */
+    /* border-radius : 20px; 모든 모서리 20px */
+    /* border-radius : 10px 40px;  상좌/하우 10px 상우/하좌 40px */
+    /* border-radius : 20px 40px 60px 80px 상좌 상우 하우 하좌  */
+    /* 세부속성 : border-top|bottom-left|right-radius */
+    #data1 { width:300px; height:300px; border:10px solid red; border-width:30px; 
+    border-style:inset; }  
+    #data2 { width: 300px; height: 200px; border:10px solid red; border-top:5px solid blue; border-bottom:10px dotted red; border-left:20px dashed gold; border-right:40px double green; margin:20px; }
+    #data3 { width: 200px; height: 200px; margin: 50px; border:7px solid orange;
+    border-right:20px dotted lime; border-bottom-color:blueviolet; }
+    #data4 { width: 200px; height: 200px; border:4px solid red; border-radius:30px; margin: 40px; }
+    #data5 { width: 200px; height: 200px; border:4px solid red; border-radius:20px 80px; margin: 40px; }
+    #data6 { width: 200px; height: 200px; border:4px solid red; border-radius:20px 40px 60px 80px; margin: 40px; }
+    #data7 { width: 200px; height: 200px; border:4px solid blue; margin: 40px; 
+    border-top-left-radius:30px; }
+    #data8 { width: 200px; height: 200px; border:4px solid blue; margin: 40px; 
+    border-radius:102px; }
+    #data9 { width:800px; height:100px; border:4px solid blue; margin: 40px; 
+    border-radius:52px; }
+    #data10 { width:800px; height:100px; border:4px solid blue; margin: 40px; border-radius:50%; }
     </style>
 </head>
 <body>
