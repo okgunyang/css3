@@ -66,7 +66,12 @@
     #txt8 { font-family: "ntg", sans-serif; font-size:80px; }
     #txt9 { font-size:80px; font-family: 'Nanum Gothic', sans-serif; }
     /* text-shadow:x방향 y방향 블러양 그림자색 - 글자그림자설정 */
+    /* direction : ltl | rtl -> 글자진행방향 */
+    /* writing-mode : horizontal-tb | sideways-lr | sideways-rl | vertical-rl | vertical-lr -> 글자표시방향 */
+    /* text-orientation : mixed | upright | sideways | sideways-right -> 글자회전 */
     #txt10 { font-size:80px; font-family: 'aar', "ntg", sans-serif; text-shadow:4px 2px 5px #d30; }
+    #txt10 span { display:block; direction:rtl; 
+    writing-mode:vertical-rl; text-orientation:mixed; }
     </style>
 </head>
 <body>
@@ -80,7 +85,7 @@
         <p class="txt" id="txt7">문단 및 글자 모양7  text style paragraph style font style text style paragraph style font style text style paragraph style font style text style paragraph style font style text style paragraph style font style text style paragraph style font style text style paragraph style font style text style paragraph style font style text style paragraph style font style text style paragraph style font style text style paragraph style font style text style paragraph style font style text style paragraph style font style</p>
         <p class="txt" id="txt8">문단 및 글자 모양8</p>
         <p class="txt" id="txt9">문단 및 글자 모양9</p>
-        <p class="txt" id="txt10">문단 및 글자 모양10 font style text style </p>
+        <p class="txt" id="txt10">문단 및 글자 모양10 font style text style<span>문단 및 글자</span> </p>
     </div>
 </body>
 </html>

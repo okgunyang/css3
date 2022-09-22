@@ -19,12 +19,14 @@
     /* height : px | % | em | vh | vw 단위 숫자 -> 높이 지정 */
         /* width 또는 height 은 auto 지정이 가능함 */
     /* overflow : visible | auto | scroll | hidden -> 흘러 넘침 속성 */
+        /* overflow-x, overflow-y, scroll-behavior(a태그로 스크롤 될 때 부드럽게 이동) */
     /* margin : 상/우/하/좌, 상/하 좌/우, 상 우 하 좌 -> 바깥여백 */
         /* margin-top, margin-right, margin-bottom, margin-left */
     /* padding : 상/우/하/좌, 상/하 좌/우, 상 우 하 좌 -> 안여백 */
         /* padding-top, padding-right, padding-bottom, padding-left */ 
+    body, html { scroll-behavior:smooth; scroll-snap-type: y mandatory; }    
     .box { display:inline-block; background-color:gold; }  
-    #box1 { display:block; margin-top:30px; margin-bottom:30px; width:200px; text-align: center; line-height: 200px; } 
+    #box1 { display:block; margin-top:30px; margin-bottom:30px; width:200px; text-align: center; line-height: 200px;  } 
     #box2 { display:inline; margin:50px; line-height: 200px; }
     #box3 { width: 400px; height:100px; opacity:0.7; overflow:scroll; }
     #box5 { display:none; }
@@ -40,7 +42,7 @@
 </head>
 <body>
     <div class="wrap">
-        <div class="box" id="box1">박스1</div>
+        <div class="box" id="box1">박스1 <a href="#data10">데이터10</a>   </div>
         <div class="box" id="box2">박스2</div>
         <div class="box" id="box3">박스3</div>
         <div class="box" id="box4">박스4</div>
