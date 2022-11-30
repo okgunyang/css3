@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS transition02</title>
+    <script src="prefixfree.min.js"></script>
+    <style>
+    * { margin: 0; padding: 0; }
+    body, html { width:100%; }
+    ul { list-style: none; }
+    a { text-decoration: none; }
+    h2, h3 { clear:both; width:1280px; margin: 0 auto; padding-top: 1.5rem; padding-bottom: 0.5rem; }
+    .container { clear:both; width: 1280px; margin: 0 auto; }
+    .container:after { content:""; clear:both; display:block; } 
+    .lst { width:1280px; }
+    .lst li { width:20%; margin-right: 5%; height:40px; line-height: 40px; float:left; overflow:hidden; }
+    .lst li a { display:block; line-height: 40px; height: 40px; 
+     transition-duration:1s; }
+    .lst li:first-child a { transition-delay:0s; }
+    .lst li:nth-child(2) a { transition-delay:0.2s; }
+    .lst li:nth-child(3) a { transition-delay:0.4s; }
+    .lst li:last-child a { transition-delay:0.6s; }
+    .lst li a span { display:block; text-align: center; font-size:24px; }
+    .lst li a span.eng { color:deepskyblue; }
+    .lst li a span.kor { color:deeppink; }
+    .lst:hover li a { margin-top: -40px; }
+
+    .lst2 { clear:both; width: 1280px; }
+    .lst2:after { content:""; display:block; clear:both; }
+    .lst2 li { width:24px; margin-right: 100px; float:left; height:400px; }
+    .lst2 li a { display:block; position:relative; height: 400px; }
+    .lst2 li a span { display:block; position:absolute; bottom:0px; left:0; background-color:deepskyblue; width: 24px; border:3px solid #333; height: 0; transition-duration:2s; }
+    .lst2:hover li a span { height:400px; background-color:deeppink;
+    border:3px solid gold; }
+    .lst2 li:first-child a span { transition-property:height; }
+    .lst2 li:nth-child(2) a span { transition-property:height, background; transition-duration:4s, 1s; }
+    .lst2 li:nth-child(3) a span { transition-property:border, background; transition-duration:1s, 4s; }
+    .lst2 li:nth-child(3) a span { transition-property:all; transition-duration:3s; }
+
+    .lst3 { clear:both; width: 1280px; }
+    .lst3:after { content:""; display:block; clear:both; }
+    .lst3 li { width:24px; margin-right: 100px; float:left; height:400px; }
+    .lst3 li a { display:block; position:relative; height: 400px; }
+    .lst3 li a span { display:block; position:absolute; bottom:0px; left:0; background-color:deepskyblue; width: 24px; border:3px solid #333; height: 0; transition-duration:4s; }
+    .lst3:hover li a span { height:400px; background-color:deeppink;
+    border:3px solid gold; }
+    .lst3 li:first-child a span { transition-timing-function:ease-in; }
+    .lst3 li:nth-child(2) a span { transition-timing-function:ease-out; }
+    .lst3 li:nth-child(3) a span { transition-timing-function:ease-in-out; }
+    .lst3 li:nth-child(4) a span { transition-timing-function:ease; }
+    .lst3 li:last-child a span { transition-timing-function:cubic-bezier(0,1.38,1,-1.71);  }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class="title">CSS transition property</h2>
+        <p>트랜지션 속성(transition property) : transition-duration(트랜지션 실행시간), transition-delay(트랜지션 지연시간), transition-property(트랜지션 속성), transition-timing-function(트랜지션 시간 함수)</p>
+        <br><hr><br>
+        <h3>transition-duration : 필수 속성으로 트랜지션의 작동시간을 지정할 때 사용하는 속성으로 지정시에는 시간단위 값을 지정해야함</h3>
+        <p>선택자 { transition-duration:2s; }</p>
+        <br><hr><br>
+        <h3>transition-delay : 선택 속성으로 트랜지션의 시작 전 지연시간을 의미하며, 지정한 시간 단위 값 만큼 기다린 후 작동함</h3>
+        <p>선택자 { transition-duration:2s; transition-delay:0.6s; }</p>
+        <br><hr><br>
+        <h3>transition-property : 트랜지션을 적용할 CSS 속성을 지정할 수 있으며, 여러 개의 CSS 속성을 지정한 경우 transition-duration이나 transition-delay 등을 달리 적용할 수 있다.</h3>
+        <p>css-property | all</p>
+        <p>선택자 { transition-duration:2s, 1s, 4s, 3s; transition-delay:0.6s, 0.2s, 0.1s, 0.5s; 
+            transition-property:color, background, height, border}</p>
+        <br><hr><br>
+
+        <h3>transition-timing-function : 트랜지션의 가속 및 감속 효과를 지정</h3>
+        <p>ease | ease-in | ease-out | ease-in-out | linear | cubic-bezier()</p>
+        <p>선택자1 { transition-duration:4s; transition-timing-function:ease; }</p>    
+        <p>선택자2 { transition-duration:4s; transition-timing-function:ease-in; }</p>
+        <p>선택자3 { transition-duration:4s; transition-timing-function:ease-out; }</p>
+        <p>선택자4 { transition-duration:4s; transition-timing-function:ease-in-out; }</p>
+        <p>선택자5 { transition-duration:4s; transition-timing-function:linear; }</p>
+        <p>선택자6 { transition-duration:4s; transition-timing-function:cubic-bezier(0,1.38,1,-1.71); }</p>
+        <br><hr><br>
+        <h3>transition 통합 속성</h3>
+        <p>transition : property duration timing-function delay</p>
+        <p>transition의 세부 속성을 한 번에 지정가능함</p>
+    </div>    
+    <br><hr><br>
+    <div class="container">
+        <h3>transition-delay</h3>
+        <ul class="lst">
+            <li>
+                <a href="">
+                    <span class="eng">Item1</span>
+                    <span class="kor">항목1</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="eng">Item2</span>
+                    <span class="kor">항목2</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="eng">Item3</span>
+                    <span class="kor">항목3</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="eng">Item4</span>
+                    <span class="kor">항목4</span>
+                </a>
+            </li>
+        </ul>   
+    </div>
+    <br><hr><br>
+    <div class="container">
+        <h3>transition-property</h3>
+        <ul class="lst2">
+            <li><a href=""><span></span></a></li>
+            <li><a href=""><span></span></a></li>
+            <li><a href=""><span></span></a></li>
+            <li><a href=""><span></span></a></li>
+        </ul>   
+    </div>
+    <br><hr><br>
+    <div class="container">
+        <h3>transition-timing-function</h3>
+        <ul class="lst3">
+            <li><a href=""><span></span></a></li>
+            <li><a href=""><span></span></a></li>
+            <li><a href=""><span></span></a></li>
+            <li><a href=""><span></span></a></li>
+            <li><a href=""><span></span></a></li>
+        </ul>   
+    </div>
+</body>
+</html>

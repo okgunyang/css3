@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Animation</title>
+    <script src="prefixfree.min.js"></script>
+    <style>
+    * { margin: 0; padding: 0; }
+    body, html { width:100%; }
+    ul { list-style: none; }
+    a { text-decoration: none; }
+    h2, h3 { clear:both; width:1280px; margin: 0 auto; padding-top: 1.5rem; padding-bottom: 0.5rem; }
+    .container { clear:both; width: 1280px; margin: 0 auto; }
+    .container:after { content:""; clear:both; display:block; } 
+
+    .lst { width:1280px; height:480px; clear:both; margin:0 auto; }
+    .lst:after { content:""; clear:both; display:block; }
+    .lst li { width:25%; float:left; min-height:400px; position:relative; 
+    overflow:hidden; }
+    .lst li a { margin:25px; border:3px solid #333; display:block; }
+    .lst li a span { display:block; line-height: 40px; }
+
+    .ani1 li a { height:80px; width:80px; position:absolute; animation:ani1 20s;  }
+    .ani1 li a span { display:none; }
+    .ani1 li.item1 a { animation-duration:10s; }
+    .ani1 li.item2 a { animation-duration:15s; }
+    .ani1 li.item3 a { animation-duration:5s; }
+    .ani1 li.item4 a { animation-duration:20s; }
+    @keyframes ani1 {
+        0% { left:0px; border-radius:44px; top:0px; background-color:#fff;  }
+        20% { left:200px; border-radius:0px; top:200px; background-color:gold; }
+        40% { left:0px; border-radius:44px; top:0px; background-color:pink; }
+        60% { left:0px; border-radius:0px; top:200px; background-color:deepskyblue; }
+        80% { left:200px; border-radius:44px; top:200px; background-color:deeppink; }
+        100% { left:0px; border-radius:44px; top:0px; background-color:#333;  }
+    }
+
+    .ani2 li a { border:0; display:block; width: 148px; height: 148px; 
+    overflow:hidden; border-radius:90px; }
+    .ani2 li a svg { animation-name:ani2; animation-duration:5s; 
+    stroke-dasharray:566;  animation-fill-mode:both; 
+    animation-iteration-count: 3; }
+    .ani2 li.item1 a svg {  animation-fill-mode:both; animation-fill-mode:none; animation-iteration-count: 2;  animation-fill-mode: backwards; animation-fill-mode: forwards; animation-fill-mode: both; 
+    animation-timing-function: ease-out; animation-play-state: running; }
+    .ani2 li.item1:hover a svg { animation-play-state: paused; }
+    .ani2 li.item2 a svg { animation-name:ani3; animation-delay:1s; 
+        animation-iteration-count:infinite; }
+    .ani2 li.item3 a svg { animation-name:ani4; animation-delay:1s; 
+        animation-iteration-count:infinite; }
+    .ani2 li.item4 a svg { animation-name:ani5; animation-delay:1s; 
+        animation-iteration-count:infinite; animation-direction: reverse; 
+    animation-direction: alternate; animation-direction: alternate-reverse; }
+    @keyframes ani2 {
+        0% { stroke-dashoffset:566; }
+        50% { stroke-dashoffset:0; }
+        100% { stroke-dashoffset:-566; }
+    }  
+    @keyframes ani3 {
+        0% { stroke-dashoffset:566; }
+        50% { stroke-dashoffset:100; }
+        80% { stroke-dashoffset:100; }
+        100% { stroke-dashoffset:-566; }
+    } 
+    @keyframes ani4 {
+        0% { stroke-dashoffset:566; }
+        50% { stroke-dashoffset:180; }
+        80% { stroke-dashoffset:180; }
+        100% { stroke-dashoffset:-566; }
+    } 
+    @keyframes ani5 {
+        0% { stroke-dashoffset:566; }
+        100% { stroke-dashoffset:140; }
+    } 
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class="title">CSS Animation property</h2>
+        <p>Animation 속성 : animation-name(애니메이션 이름), animation-duration(애니메이션 실행시간), animation-timing-function(애니메이션 시간함수), animation-delay(애니메이션 지연시간), animation-iteration-count(애니메이션 실행횟수), animation-direction(애니메이션 흐름방향), animation-fill-mode(애니메이션 실행모드), animation-play-state(애니메이션 재생상태)</p>
+        <br><hr><br>
+        <h3>animation-name(애니메이션 이름)</h3>
+        <p>애니메이션의 이름으로 필수 속성이며, 반드시 animation-duration과 @keyframes 규칙을 함께 지정해야 함</p>
+        <p>선택자 { animation-name:ani1; animation-duration:3s; }
+           <br><br>
+           @keyframes ani1 {
+            0% { top:0px; left:0px; }
+            100% { top:500px; left:600px; }
+           } 
+        </p>
+
+        <br><hr><br>
+        <h3>animation 통합 속성</h3>
+        <p>animation : name duration timing-function delay iteration-count direction fill-mode play-state</p>
+        <p>animation의 세부 속성을 한 번에 지정가능함</p>
+
+        <br><hr><br>
+        <h3>animation-duration, animation-name, @keyframes</h3>
+        <p>animation-duration : 애니메이션의 실행시간을 나타내는 필수 속성으로 시간 단위로 값을 지정</p>
+        <p>animation-name : 애니메이션의 이름을 지정하는 필수 속성으로 영문과 숫자를 조합하여 지정</p>
+        <p>@keyframes : 애니메이션의 동작을 나타내는 키프레임들의 변화된 내용들을 기술하는 것으로 각 각의 키프레임은 %단위 또는 start, end로 지시한다. </p>
+        <p>선택자 { animation-name:애니메이션이름; animation-duration:5s; }
+            <br><br>
+            @keyframes 애니메이션이름 {
+             start { top:0px; left:0px; }
+             end { top:500px; left:600px; }
+            } 
+         </p>
+
+         <br><hr><br>
+         <h3>애니메이션 선택 속성</h3>
+        <p>animation-delay : 애니메이션의 지연 시간을 나타내는 선택 속성으로 시간 단위 값을 지정 </p>
+        <p>animation-iteration-count : 애니메이션 실행 횟수를 나타내는 선택속성으로 반복횟수를 숫자로 지정 또는 무한대로 계속 실행하게 할 경우는 infinite를 적용</p>
+        <p>animation-direction : 애니메인션 실행방향을 지정하는 선택속성으로 0%에서 100% 방향을 순방향(), 100%에서 0% 방향을 역방향</p>
+        <p>animation-fill-mode : 애니메이션이 모두 진행된 후의 원래대로 복귀할지 아니면, 그대둘지 지정하는 옵션 - none, backwards, forwards, both</p>
+        <p>animation-timing-function : 애니메이션의 가속 및 감속 효과를 적용하는 선택속성으로 ease, ease-in, ease-out, ease-in-out, linear, cubic() 등을 선택하여 지정할 수 있음</p>
+        <p>animation-play-state : 애니메이션의 상태를 재생 또는 정지 상태로 변경할 수 있는 선택 속성으로 running, paused </p>
+    </div>
+    <br><hr><br>
+    <div class="container">
+        <h3>애니메이션 통합 속성 예시</h3>
+        <ul class="ani1 lst">
+            <li class="item1"><a href=""><span class="shape">도형1</span></a></li>
+            <li class="item2"><a href=""><span class="shape">도형2</span></a></li>
+            <li class="item3"><a href=""><span class="shape">도형3</span></a></li>
+            <li class="item4"><a href=""><span class="shape">도형4</span></a></li>
+        </ul>
+    </div>
+
+    <br><hr><br>
+    <div class="container">
+        <h3>애니메이션 세부 속성 예시</h3>
+        <ul class="ani2 lst">
+            <li class="item1">
+                <a href="">
+                    <svg class="moving-circle" width="150" height="150" viewBox="0 0 168 168" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M163 84C163 127.63 127.63 163 84 163C40.3695 163 5 127.63 5 84C5 40.3695 40.3695 5 84 5C127.63 5 163 40.3695 163 84Z" stroke="black" fill="none" stroke-width="110"/>
+                        <text x="68" y="87" fill="red">JAVA</text>
+                    </svg>        
+                </a>
+            </li>
+            <li class="item2">
+                <a href="">
+                    <svg class="moving-circle" width="150" height="150" viewBox="0 0 168 168" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M163 84C163 127.63 127.63 163 84 163C40.3695 163 5 127.63 5 84C5 40.3695 40.3695 5 84 5C127.63 5 163 40.3695 163 84Z" stroke="gold" fill="none" stroke-width="110"/>
+                        <text x="68" y="87" fill="red">JSP</text>
+                    </svg>
+                </a>
+            </li>
+            <li class="item3">
+                <a href="">
+                    <svg class="moving-circle" width="150" height="150" viewBox="0 0 168 168" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M163 84C163 127.63 127.63 163 84 163C40.3695 163 5 127.63 5 84C5 40.3695 40.3695 5 84 5C127.63 5 163 40.3695 163 84Z" stroke="deeppink" fill="none" stroke-width="110"/>
+                        <text x="65" y="87" fill="red">SPRING</text>
+                    </svg>
+                </a>
+            </li>
+            <li class="item4">
+                <a href="">
+                    <svg class="moving-circle" width="150" height="150" viewBox="0 0 168 168" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M163 84C163 127.63 127.63 163 84 163C40.3695 163 5 127.63 5 84C5 40.3695 40.3695 5 84 5C127.63 5 163 40.3695 163 84Z" stroke="deepskyblue" fill="none" stroke-width="110"/>
+                        <text x="65" y="87" fill="red">Servlet</text>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <br>
+    <hr>
+    <br>
+    <div class="container">
+        <svg id="sw-js-blob-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" version="1.1">
+            <defs> 
+                <linearGradient id="sw-gradient" x1="0" x2="1" y1="1" y2="0">
+                    <stop id="stop1" stop-color="rgba(248, 117, 55, 1)" offset="0%"></stop>
+                    <stop id="stop2" stop-color="rgba(251, 168, 31, 1)" offset="100%"></stop>
+                </linearGradient>
+            </defs>
+        <path fill="url(#sw-gradient)" d="M24.5,-26C32.4,-22.5,39.9,-15.4,40.6,-7.7C41.3,0,35.1,8.4,30.1,17.6C25,26.7,21,36.7,14.2,39.4C7.3,42.1,-2.3,37.5,-9.8,32.4C-17.2,27.3,-22.5,21.7,-26.4,15.1C-30.4,8.6,-33,1.2,-32,-5.9C-31,-12.9,-26.5,-19.5,-20.6,-23.4C-14.6,-27.2,-7.3,-28.2,0.5,-28.8C8.3,-29.4,16.6,-29.5,24.5,-26Z" width="100%" height="100%" transform="translate(50 50)" stroke-width="0" style="transition: all 0.3s ease 0s;"></path>
+      </svg>
+    </div>
+</body>
+</html>
